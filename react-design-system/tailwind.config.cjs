@@ -32,14 +32,6 @@ module.exports = {
         sans: 'Poppins, sans-serif'
       },
     },
-    spacing: {
-      '1.3': '.3438rem',
-      '3.7': '.9375rem',
-      '2.5': '0.625rem',
-      '22': '5.8125rem',
-
-      
-    }
   },
   plugins: [],
 }

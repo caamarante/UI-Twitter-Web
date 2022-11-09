@@ -8,7 +8,7 @@ export default {
         children: 'Tweet',
     },
     argTypes: {
-        size: {
+        asChild: {
             table: {
                 disable: true,
             }
@@ -16,28 +16,16 @@ export default {
     }
 } as Meta<ButtonProps>
 
-export const Primary_Big: StoryObj<ButtonProps> = {
+export const Primary: StoryObj<ButtonProps> = {
     args: {
+        color: 'primary',
         size: 'lg'
     }
 }
 
-export const Primary_Medium: StoryObj<ButtonProps> = {
+export const Secondary: StoryObj<ButtonProps> = {
     args: {
-        size: 'md'
-    }
-}
-
-export const Secondary_Small: StoryObj<ButtonProps> = {
-    args: {
-        size: 'sm',
-        color: 'secondary'
-    }
-}
-
-export const Secondary_Medium: StoryObj<ButtonProps> = {
-    args: {
-        size: 'md',
-        color: 'secondary'
+        color: 'secondary',
+        size: 'lg'
     }
 }
