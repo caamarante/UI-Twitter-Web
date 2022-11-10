@@ -1,13 +1,27 @@
 import { Meta, StoryObj} from '@storybook/react'
-import { Profile, ProfileProps } from './Profile'
+import { ProfileCard, ProfileProps } from './Profile'
 
 export default {
     title: 'Components/Profile',
-    component: Profile,
+    component: ProfileCard,
     args: {
+        mode: 'light',
     },
-    argTypes: {
+    mode: {
+        table: {
+            disable: true,
+        }
     }
 } as Meta<ProfileProps>
 
-export const ProfileDefault: StoryObj<ProfileProps> = {}
+export const ProfileDefault: StoryObj<ProfileProps> = {
+    args: {
+        mode: 'light',
+    }
+}
+
+export const ProfileDark: StoryObj<ProfileProps> = {
+    args: {
+        mode: 'dark',
+    }
+}

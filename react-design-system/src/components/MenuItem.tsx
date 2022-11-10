@@ -1,31 +1,120 @@
-import { ReactNode } from 'react';
+import { Children, ReactNode } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
 import { Heading } from './Heading';
+import { Bookmarks, ExploreDefault, HomeDefault, ListsDefault, MessagesDefault, MoreDefault, NotificationsDefault, ProfileDefault } from './IconSet';
 
 export interface MenuItemProps {
-    mode?: 'dark' | 'light'
+    mode?: 'dark' | 'light';
+    children: ReactNode;
 }
 
-export function MenuItem({mode = 'light' }: MenuItemProps) {
+export function Home({mode = 'light'}: MenuItemProps) {
     return(
-        <li className={clsx('flex w-64 h-16 items-center',{'bg-dark-1': mode === 'dark'})}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" className={clsx('ml-2.5 mr-5')}>
-                <path d="M22.46 7.56999L12.357 2.11499C12.134 1.99499 11.867 1.99499 11.644 2.11499L1.54299 7.56999C1.17899 7.76699 1.04299 8.22199 1.23999 8.58699C1.37499 8.83699 1.63399 8.97999 1.89999 8.97999C2.01999 8.97999 2.14299 8.94999 2.25599 8.88999L3.07099 8.44999L4.69999 19.963C4.91399 21.178 6.00799 22.025 7.35799 22.025H16.64C17.992 22.025 19.085 21.177 19.303 19.938L20.929 8.44799L21.747 8.88999C22.111 9.08299 22.567 8.94999 22.764 8.58599C22.96 8.22299 22.824 7.76799 22.46 7.56999ZM17.822 19.703C17.715 20.309 17.119 20.525 16.642 20.525H7.35999C6.87999 20.525 6.28499 20.309 6.18199 19.727L4.47999 7.68999L12 3.62799L19.522 7.68799L17.822 19.703Z" fill={clsx(
-                    {
-                        '#FFF': mode === 'dark',
-                        '#000': mode === 'light',
-                    }
-                )}/>
-                <path d="M8.21997 12.184C8.21997 14.268 9.91497 15.964 12 15.964C14.085 15.964 15.78 14.268 15.78 12.184C15.78 10.1 14.085 8.40399 12 8.40399C9.91497 8.40399 8.21997 10.1 8.21997 12.184ZM14.28 12.184C14.28 13.442 13.258 14.464 12 14.464C10.742 14.464 9.71997 13.442 9.71997 12.184C9.71997 10.926 10.742 9.90399 12 9.90399C13.258 9.90399 14.28 10.926 14.28 12.184Z" fill={clsx(
-                    {
-                        '#FFF': mode === 'dark',
-                        '#000': mode === 'light',
-                    }
-                )}/>
-            </svg>
-            <Heading size='h3'>
+        <li className={clsx('flex w-64 h-16 items-center',{'bg-dark-300': mode === 'dark'})}>
+            <HomeDefault  mode={mode} className='ml-2.5'></HomeDefault>
+            <Heading size='h3' className={clsx('ml-5',{
+                'text-white': mode === 'dark',
+                'text-black': mode === 'light',
+            })}>
                 Home
+            </Heading>
+        </li>
+    )
+}
+export function Explore({mode = 'light'}: MenuItemProps) {
+    return(
+        <li className={clsx('flex w-64 h-16 items-center',{'bg-dark-300': mode === 'dark'})}>
+            <ExploreDefault  mode={mode} className='ml-2.5'></ExploreDefault>
+            <Heading size='h3' className={clsx('ml-5',{
+                'text-white': mode === 'dark',
+                'text-black': mode === 'light',
+            })}>
+                Explore
+            </Heading>
+        </li>
+    )
+}
+
+export function Notifications({mode = 'light'}: MenuItemProps) {
+    return(
+        <li className={clsx('flex w-64 h-16 items-center',{'bg-dark-300': mode === 'dark'})}>
+            <NotificationsDefault  mode={mode} className='ml-2.5'></NotificationsDefault>
+            <Heading size='h3' className={clsx('ml-5',{
+                'text-white': mode === 'dark',
+                'text-black': mode === 'light',
+            })}>
+                Notifications
+            </Heading>
+        </li>
+    )
+}
+
+export function Messages({mode = 'light'}: MenuItemProps) {
+    return(
+        <li className={clsx('flex w-64 h-16 items-center',{'bg-dark-300': mode === 'dark'})}>
+            <MessagesDefault  mode={mode} className='ml-2.5'></MessagesDefault>
+            <Heading size='h3' className={clsx('ml-5',{
+                'text-white': mode === 'dark',
+                'text-black': mode === 'light',
+            })}>
+                Messages
+            </Heading>
+        </li>
+    )
+}
+
+export function BookmarksDefault({mode = 'light'}: MenuItemProps) {
+    return(
+        <li className={clsx('flex w-64 h-16 items-center',{'bg-dark-300': mode === 'dark'})}>
+            <Bookmarks  mode={mode} className='ml-2.5'></Bookmarks>
+            <Heading size='h3' className={clsx('ml-5',{
+                'text-white': mode === 'dark',
+                'text-black': mode === 'light',
+            })}>
+                Bookmarks
+            </Heading>
+        </li>
+    )
+}
+
+export function Lists({mode = 'light'}: MenuItemProps) {
+    return(
+        <li className={clsx('flex w-64 h-16 items-center',{'bg-dark-300': mode === 'dark'})}>
+            <ListsDefault  mode={mode} className='ml-2.5'></ListsDefault>
+            <Heading size='h3' className={clsx('ml-5',{
+                'text-white': mode === 'dark',
+                'text-black': mode === 'light',
+            })}>
+                Lists
+            </Heading>
+        </li>
+    )
+}
+
+export function Profile({mode = 'light'}: MenuItemProps) {
+    return(
+        <li className={clsx('flex w-64 h-16 items-center',{'bg-dark-300': mode === 'dark'})}>
+            <ProfileDefault  mode={mode} className='ml-2.5'></ProfileDefault>
+            <Heading size='h3' className={clsx('ml-5',{
+                'text-white': mode === 'dark',
+                'text-black': mode === 'light',
+            })}>
+                Profile
+            </Heading>
+        </li>
+    )
+}
+
+export function More({mode = 'light'}: MenuItemProps) {
+    return(
+        <li className={clsx('flex w-64 h-16 items-center',{'bg-dark-300': mode === 'dark'})}>
+            <MoreDefault  mode={mode} className='ml-2.5'></MoreDefault>
+            <Heading size='h3' className={clsx('ml-5',{
+                'text-white': mode === 'dark',
+                'text-black': mode === 'light',
+            })}>
+                More
             </Heading>
         </li>
     )
